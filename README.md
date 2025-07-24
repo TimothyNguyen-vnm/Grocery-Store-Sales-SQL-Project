@@ -22,7 +22,7 @@ The dataset contains records of customers for their last full year of the loyalt
 ## Task 1
 Last year (2022) there was a bug in the product system. For some products that were added in that year, the `year_added` value was not set in the data. As the year the product was added may have an impact on the price of the product, this is important information to have.
 
-I need to write a query to determine how many products have the `year_added` value missing. Your output should be a single column, `missing_year`, with a single row giving the number of missing values.
+
 ```sql
 SELECT COUNT(*) AS missing_year
 FROM products
@@ -32,7 +32,6 @@ WHERE year_added IS NULL;
 ## Task 2
 Given what you know about the year added data, you need to make sure all of the data is clean before you start your analysis. The table below shows what the data should look like.
 
-I need to write a query to ensure the product data matches the description provided. Do not update the original table.
 | Column Name | Criteria                                                |
 |-------------|---------------------------------------------------------|
 |product_id | Nominal. The unique identifier of the product. </br>Missing values are not possible due to the database structure.|
@@ -65,7 +64,6 @@ FROM products;
 ## Task 3
 To find out how the range varies for each product type, your manager has asked you to determine the minimum and maximum values for each product type.
 
-I need to write a query to return the `product_type`, `min_price` and `max_price` columns.
 ```sql
 SELECT product_type,
 	   MIN(price) AS min_price,
@@ -77,7 +75,6 @@ GROUP BY product_type;
 ## Task 4
 The team want to look in more detail at meat and dairy products where the average units sold was greater than ten.
 
-I need to write a query to return the `product_id`, `price` and `average_units_sold` of the rows of interest to the team.
 ```sql
 SELECT product_id, price, average_units_sold
 FROM products 
